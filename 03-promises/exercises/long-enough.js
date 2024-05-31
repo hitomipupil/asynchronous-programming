@@ -1,4 +1,4 @@
-import { labeledLogger } from '../../../lib/labeled-logger.js';
+import { labeledLogger } from '../../lib/labeled-logger.js';
 
 const { log, error } = labeledLogger();
 
@@ -10,20 +10,26 @@ const { log, error } = labeledLogger();
 
 */
 
+
+
 // resolve/reject based on length of user input
-_ _((_, _) => {
-  const userInput = prompt('enter something longer than 5 characters');
+new Promise((resolve, reject) => {
+  const userInput = 'aa';
+  // const userInput = prompt('enter something longer than 5 characters');
   if (userInput !== null && userInput.length > 5) {
-    _('your input is long enough');
+    resolve('your input is long enough');
   } else {
-    _('your input is too short');
+    reject('your input is too short');
   }
 })
-  ._(resolvedValue => {
+  .then(resolvedValue => {
     log('resolved value: ', resolvedValue);
   })
-  ._(rejectionValue => {
+  .then(() => console.log('thank you for playing!'))
+  .catch
+  (rejectionValue => {
     log('rejected value: ', rejectionValue);
+    console.log('try again later');
   });
 
 log('= = = =  the call stack is empty  = = = =');

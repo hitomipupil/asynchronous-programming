@@ -14,6 +14,7 @@ export const chooseAlbum = async (event) => {
         const albumPromise = typicodeResource('albums', albumId);
         const photosPromise = typicodeResource('albums', albumId, 'photos');
 
+        // Wait for both promises to resolve
         const [album, photos] = await Promise.all([
             albumPromise,
             photosPromise,

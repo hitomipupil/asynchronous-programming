@@ -1,4 +1,4 @@
-import { evolutionChain } from './evolution-chain.js';
+import { evolutionChain } from './evolution-chain.mjs';
 
 describe('evolutionChain: returns a selected array of pokemon in order', () => {
     it('returns the pokemon in chain 4', async () => {
