@@ -1,18 +1,19 @@
+import 'whatwg-fetch';
 import { ORIGIN } from '../config.js';
 
 /**
- * Returns an array of all Pokemon with a specific ability.
+ * Returns an array of pokemon in an evolution chain.
  *
  * @async
- * @param {string} [ability=''] - The ability to request.
+ * @param {number} [chainId=1] - The evolution chain's id to fetch.
  * @returns {Promise<object[]>} An array of Pokemon objects with a name and URL.
  *
  * @throws {Error} HTTP error! status: {number}.
  */
-export const pokemonWithAbility = async (ability = '') => {
+export const evolutionChain = async (chainId = 1) => {
     // --- generate and declare your resource's URL ---
-    // docs: https://pokeapi.co/docs/v2#abilities
-    const URL = _;
+    // docs: https://pokeapi.co/docs/v2#evolution-section
+    const URL = `${ORIGIN}/pokemon/${chainId}`;
 
     // --- fetch the API data (this works!) ---
     const encodedURL = encodeURI(URL);
@@ -32,8 +33,10 @@ export const pokemonWithAbility = async (ability = '') => {
     // --- process the fetched data (if necessary) ---
     //  you do not need to use `await` below this comment
     //  you can refactor this to a separate logic function and test it
-    const pokemon = _;
-
+    const pokemon = [];
+    data.forEach((poke) => pokemon.push(poke)); // tricky one!  you will need to push all the species into an array
     // --- return the final data ---
-    return pokemon;
+    return data;
 };
+
+// await evolutionChain(1);

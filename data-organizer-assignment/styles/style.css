@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: white;
+    background-color: #1d1837;
+    font-family: sans-serif;
+}
+
+.container {
+display: flex;
+flex-direction: column;
+}
+
+
+h1 {
+    margin-bottom: 20px;
+}
+
+#sort-button {
+margin-bottom: 10px;
+}
+
+#paginatorSection{
+margin-bottom: 10px;
+}
+
+#pageSelectSection{
+margin-bottom: 10px;
+}
+
+#displaySection{
+margin-bottom: 10px;
+
+}

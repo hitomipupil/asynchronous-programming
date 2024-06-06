@@ -21,9 +21,10 @@ export const renderAlbum = (album = {}, photos = []) => {
     userEl.innerHTML = 'user: ' + album.id;
     container.appendChild(userEl);
 
+    //photo is an array
     const renderedPhotos = photos.map(renderPhoto).reduce((all, next) => {
         all.appendChild(next);
-        return all;
+        return all; 
     }, document.createElement('div'));
     container.appendChild(renderedPhotos);
 
